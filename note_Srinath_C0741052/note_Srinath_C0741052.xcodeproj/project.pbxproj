@@ -15,6 +15,8 @@
 		AC19D712249BC9A000DB0C3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC19D711249BC9A000DB0C3F /* Assets.xcassets */; };
 		AC19D715249BC9A000DB0C3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC19D713249BC9A000DB0C3F /* LaunchScreen.storyboard */; };
 		AC68C2F224A0E2C90051DDC0 /* NoteDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC68C2F124A0E2C90051DDC0 /* NoteDetailsViewController.swift */; };
+		AC68C2F524A0F2210051DDC0 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC68C2F324A0F2210051DDC0 /* Note+CoreDataClass.swift */; };
+		AC68C2F624A0F2210051DDC0 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC68C2F424A0F2210051DDC0 /* Note+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		AC19D714249BC9A000DB0C3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC19D716249BC9A000DB0C3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC68C2F124A0E2C90051DDC0 /* NoteDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailsViewController.swift; sourceTree = "<group>"; };
+		AC68C2F324A0F2210051DDC0 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Note+CoreDataClass.swift"; path = "Note/Note+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		AC68C2F424A0F2210051DDC0 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Note+CoreDataProperties.swift"; path = "Note/Note+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 		AC19D704249BC99D00DB0C3F /* note_Srinath_C0741052 */ = {
 			isa = PBXGroup;
 			children = (
+				AC68C2F324A0F2210051DDC0 /* Note+CoreDataClass.swift */,
+				AC68C2F424A0F2210051DDC0 /* Note+CoreDataProperties.swift */,
 				AC19D705249BC99D00DB0C3F /* AppDelegate.swift */,
 				AC19D707249BC99D00DB0C3F /* SceneDelegate.swift */,
 				AC19D709249BC99D00DB0C3F /* NotesListViewController.swift */,
@@ -145,8 +151,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC19D70A249BC99D00DB0C3F /* NotesListViewController.swift in Sources */,
+				AC68C2F624A0F2210051DDC0 /* Note+CoreDataProperties.swift in Sources */,
 				AC19D710249BC99D00DB0C3F /* note_Srinath_C0741052.xcdatamodeld in Sources */,
 				AC19D706249BC99D00DB0C3F /* AppDelegate.swift in Sources */,
+				AC68C2F524A0F2210051DDC0 /* Note+CoreDataClass.swift in Sources */,
 				AC68C2F224A0E2C90051DDC0 /* NoteDetailsViewController.swift in Sources */,
 				AC19D708249BC99D00DB0C3F /* SceneDelegate.swift in Sources */,
 			);
