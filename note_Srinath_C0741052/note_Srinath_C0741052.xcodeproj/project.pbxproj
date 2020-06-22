@@ -14,6 +14,7 @@
 		AC19D710249BC99D00DB0C3F /* note_Srinath_C0741052.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AC19D70E249BC99D00DB0C3F /* note_Srinath_C0741052.xcdatamodeld */; };
 		AC19D712249BC9A000DB0C3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC19D711249BC9A000DB0C3F /* Assets.xcassets */; };
 		AC19D715249BC9A000DB0C3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC19D713249BC9A000DB0C3F /* LaunchScreen.storyboard */; };
+		AC68C2F224A0E2C90051DDC0 /* NoteDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC68C2F124A0E2C90051DDC0 /* NoteDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		AC19D711249BC9A000DB0C3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC19D714249BC9A000DB0C3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC19D716249BC9A000DB0C3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC68C2F124A0E2C90051DDC0 /* NoteDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				AC19D705249BC99D00DB0C3F /* AppDelegate.swift */,
 				AC19D707249BC99D00DB0C3F /* SceneDelegate.swift */,
 				AC19D709249BC99D00DB0C3F /* NotesListViewController.swift */,
+				AC68C2F124A0E2C90051DDC0 /* NoteDetailsViewController.swift */,
 				AC19D70B249BC99D00DB0C3F /* Main.storyboard */,
 				AC19D711249BC9A000DB0C3F /* Assets.xcassets */,
 				AC19D713249BC9A000DB0C3F /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 				AC19D70A249BC99D00DB0C3F /* NotesListViewController.swift in Sources */,
 				AC19D710249BC99D00DB0C3F /* note_Srinath_C0741052.xcdatamodeld in Sources */,
 				AC19D706249BC99D00DB0C3F /* AppDelegate.swift in Sources */,
+				AC68C2F224A0E2C90051DDC0 /* NoteDetailsViewController.swift in Sources */,
 				AC19D708249BC99D00DB0C3F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
