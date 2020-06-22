@@ -11,7 +11,9 @@ class NotesListViewController: UIViewController {
     }
     
     @objc func addTapped() {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "NoteDetailsViewController") as! NoteDetailsViewController
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
