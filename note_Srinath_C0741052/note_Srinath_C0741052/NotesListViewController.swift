@@ -17,6 +17,12 @@ class NotesListViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        notes = fetchNotes()
+        noteTableView.reloadData()
+    }
+    
     func fetchNotes() -> [Note] {
         guard let notes = try? appdelegate.persistentContainer.viewContext.fetch(Note.fetchRequest() as NSFetchRequest<Note>) else {
             return []
