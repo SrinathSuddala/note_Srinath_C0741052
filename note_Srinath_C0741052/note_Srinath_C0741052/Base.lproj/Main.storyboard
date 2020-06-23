@@ -30,11 +30,30 @@
                     <view key="view" contentMode="scaleToFill" id="2vh-kv-Bcl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1e7-M2-e3N">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="cic-ZQ-DDc" id="uHw-Wg-pfo"/>
+                                    <outlet property="delegate" destination="cic-ZQ-DDc" id="PdA-2a-CJg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="POd-Kb-adt" firstAttribute="bottom" secondItem="1e7-M2-e3N" secondAttribute="bottom" id="CQ9-Mu-1PA"/>
+                            <constraint firstItem="POd-Kb-adt" firstAttribute="trailing" secondItem="1e7-M2-e3N" secondAttribute="trailing" id="QgU-Ch-IwI"/>
+                            <constraint firstItem="1e7-M2-e3N" firstAttribute="top" secondItem="POd-Kb-adt" secondAttribute="top" id="X4p-os-Idm"/>
+                            <constraint firstItem="1e7-M2-e3N" firstAttribute="leading" secondItem="POd-Kb-adt" secondAttribute="leading" id="cYH-Kf-s7G"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="POd-Kb-adt"/>
                     </view>
                     <navigationItem key="navigationItem" id="Bko-Ye-dEh"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="noteTableView" destination="1e7-M2-e3N" id="Z7H-1N-VpT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7eZ-Di-ZVa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
