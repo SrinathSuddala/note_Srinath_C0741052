@@ -1,10 +1,12 @@
 
 import UIKit
+import CoreData
 
 class NotesListViewController: UIViewController {
     
     @IBOutlet weak var noteTableView: UITableView!
     var notes: [Note] = []
+    let appdelegate = UIApplication.shared.delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -13,6 +15,13 @@ class NotesListViewController: UIViewController {
                            forCellReuseIdentifier: "Cell")
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
         // Do any additional setup after loading the view.
+    }
+    
+    func fetchNotes() -> [Note] {
+        guard let notes = try? appdelegate.persistentContainer.viewContext.fetch(Note.fetchRequest() as NSFetchRequest<Note>) else {
+            return []
+        }
+        return notes
     }
     
     @objc func addTapped() {
