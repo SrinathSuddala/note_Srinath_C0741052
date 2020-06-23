@@ -73,7 +73,7 @@
                                     <constraint firstAttribute="height" constant="45" id="MME-Ec-0Z8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vxm-Oi-Zi0">
                                 <rect key="frame" x="20" y="100" width="374" height="300"/>

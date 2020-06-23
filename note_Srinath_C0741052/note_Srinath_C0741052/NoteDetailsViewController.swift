@@ -11,7 +11,13 @@ class NoteDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Details"
+        let dismissTap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboardTapOfMainView))
+        self.view.addGestureRecognizer(dismissTap)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func dismissKeyboardTapOfMainView() {
+        self.view.endEditing(true)
     }
     
     @IBAction func addButtonTapped(_ sender: UIButton) {
