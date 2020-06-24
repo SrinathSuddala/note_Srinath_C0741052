@@ -53,6 +53,8 @@ class NoteDetailsViewController: UIViewController {
 extension NoteDetailsViewController: ImagePickerDelegate {
 
     func didSelect(image: UIImage?) {
+        self.imageButton.setTitle("", for: UIControl.State())
+        self.imageButton.setBackgroundImage(image, for: UIControl.State())
         selectedImage = image
     }
 }
