@@ -70,3 +70,24 @@ extension NotesListViewController: UITableViewDelegate {
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
+
+extension NotesListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.notes = fetchNotes(with: searchText)
+        noteTableView.reloadData()
+    }
+    
+    func fetchNotes(with text: String) -> [Note] {
+        if text.isEmpty {
+            guard let notes = try? appdelegate.persistentContainer.viewContext.fetch(Note.fetchRequest() as NSFetchRequest<Note>) else {
+                return []
+            }
+            return notes
+        } else {
+            guard let notes = try? appdelegate.persistentContainer.viewContext.fetch(Note.fetchRequest(with: text) as NSFetchRequest<Note>) else {
+                return []
+            }
+            return notes
+        }
+    }
+}
