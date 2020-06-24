@@ -10,6 +10,7 @@ class NoteDetailsViewController: UIViewController {
     @IBOutlet weak var recordButton: UIButton!
     var selectedImage: UIImage?
     var imagePicker: ImagePicker!
+    var selectedNote: Note?
     
     let appdelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -19,11 +20,25 @@ class NoteDetailsViewController: UIViewController {
         let dismissTap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboardTapOfMainView))
         self.view.addGestureRecognizer(dismissTap)
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
+        showSelectedNote()
         // Do any additional setup after loading the view.
     }
     
     @objc func dismissKeyboardTapOfMainView() {
         self.view.endEditing(true)
+    }
+    
+    func showSelectedNote() {
+        guard let note = selectedNote else { return }
+        titleTextField.text = note.title
+        descriptionTextView.text = note.desc
+        if let image = note.image,
+            let data = Data(base64Encoded: image, options: .ignoreUnknownCharacters),
+            let finalImage = UIImage(data: data) {
+            imageButton.setTitle("", for: UIControl.State())
+            imageButton.setBackgroundImage(finalImage, for: UIControl.State())
+        }
+        
     }
     
     @IBAction func addButtonTapped(_ sender: UIButton) {
@@ -53,7 +68,7 @@ class NoteDetailsViewController: UIViewController {
 extension NoteDetailsViewController: ImagePickerDelegate {
 
     func didSelect(image: UIImage?) {
-        self.imageButton.setTitle("", for: UIControl.State())
+        self.imageButton.setTitle(image == nil ? "Select image" : "", for: UIControl.State())
         self.imageButton.setBackgroundImage(image, for: UIControl.State())
         selectedImage = image
     }
