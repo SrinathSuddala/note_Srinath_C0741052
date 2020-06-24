@@ -31,33 +31,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1e7-M2-e3N">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SPv-SW-nra">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="cic-ZQ-DDc" id="uHw-Wg-pfo"/>
-                                    <outlet property="delegate" destination="cic-ZQ-DDc" id="PdA-2a-CJg"/>
+                                    <outlet property="dataSource" destination="cic-ZQ-DDc" id="vyJ-YQ-Mpd"/>
+                                    <outlet property="delegate" destination="cic-ZQ-DDc" id="909-3b-i7U"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="POd-Kb-adt" firstAttribute="bottom" secondItem="1e7-M2-e3N" secondAttribute="bottom" id="CQ9-Mu-1PA"/>
-                            <constraint firstItem="POd-Kb-adt" firstAttribute="trailing" secondItem="1e7-M2-e3N" secondAttribute="trailing" id="QgU-Ch-IwI"/>
-                            <constraint firstItem="1e7-M2-e3N" firstAttribute="top" secondItem="POd-Kb-adt" secondAttribute="top" id="X4p-os-Idm"/>
-                            <constraint firstItem="1e7-M2-e3N" firstAttribute="leading" secondItem="POd-Kb-adt" secondAttribute="leading" id="cYH-Kf-s7G"/>
+                            <constraint firstItem="POd-Kb-adt" firstAttribute="trailing" secondItem="SPv-SW-nra" secondAttribute="trailing" id="FBg-oe-J5Y"/>
+                            <constraint firstItem="SPv-SW-nra" firstAttribute="leading" secondItem="POd-Kb-adt" secondAttribute="leading" id="Sg1-Cf-Rzv"/>
+                            <constraint firstItem="POd-Kb-adt" firstAttribute="bottom" secondItem="SPv-SW-nra" secondAttribute="bottom" id="UEU-7X-uHE"/>
+                            <constraint firstItem="SPv-SW-nra" firstAttribute="top" secondItem="POd-Kb-adt" secondAttribute="top" id="sDu-nw-RPU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="POd-Kb-adt"/>
                     </view>
                     <navigationItem key="navigationItem" id="Bko-Ye-dEh"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
-                        <outlet property="noteTableView" destination="1e7-M2-e3N" id="Z7H-1N-VpT"/>
+                        <outlet property="noteTableView" destination="SPv-SW-nra" id="uMV-FE-QIU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7eZ-Di-ZVa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="99" y="-214"/>
+            <point key="canvasLocation" x="98.550724637681171" y="-214.28571428571428"/>
         </scene>
         <!--Note Details View Controller-->
         <scene sceneID="znL-rB-Zw1">
