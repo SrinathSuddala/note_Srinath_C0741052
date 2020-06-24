@@ -80,6 +80,10 @@ class NoteDetailsViewController: UIViewController {
         if let image = selectedImage,let imageData = image.jpeg(.low) {
             note.image = imageData.base64EncodedString(options: .lineLength64Characters)
         }
+        if let location = currentLocation {
+            note.lat = location.latitude
+            note.long = location.longitude
+        }
         appdelegate.persistentContainer.viewContext.insert(note)
         try? appdelegate.persistentContainer.viewContext.save()
     }
