@@ -58,3 +58,12 @@ extension NotesListViewController: UITableViewDataSource {
         return cell
     }
 }
+
+extension NotesListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "NoteDetailsViewController") as! NoteDetailsViewController
+        viewController.selectedNote = notes[indexPath.row]
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+}
