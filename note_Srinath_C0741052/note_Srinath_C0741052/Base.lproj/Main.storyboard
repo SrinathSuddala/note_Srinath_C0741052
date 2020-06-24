@@ -31,8 +31,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="glV-iA-QpW">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Hde-Zc-4ye"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SPv-SW-nra">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="730"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="cic-ZQ-DDc" id="vyJ-YQ-Mpd"/>
@@ -43,9 +50,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="POd-Kb-adt" firstAttribute="trailing" secondItem="SPv-SW-nra" secondAttribute="trailing" id="FBg-oe-J5Y"/>
+                            <constraint firstItem="glV-iA-QpW" firstAttribute="top" secondItem="POd-Kb-adt" secondAttribute="top" id="PiG-Th-Oxe"/>
+                            <constraint firstItem="glV-iA-QpW" firstAttribute="leading" secondItem="POd-Kb-adt" secondAttribute="leading" id="Qts-bz-JT7"/>
                             <constraint firstItem="SPv-SW-nra" firstAttribute="leading" secondItem="POd-Kb-adt" secondAttribute="leading" id="Sg1-Cf-Rzv"/>
                             <constraint firstItem="POd-Kb-adt" firstAttribute="bottom" secondItem="SPv-SW-nra" secondAttribute="bottom" id="UEU-7X-uHE"/>
-                            <constraint firstItem="SPv-SW-nra" firstAttribute="top" secondItem="POd-Kb-adt" secondAttribute="top" id="sDu-nw-RPU"/>
+                            <constraint firstItem="SPv-SW-nra" firstAttribute="top" secondItem="glV-iA-QpW" secondAttribute="bottom" id="Y7r-AW-kVe"/>
+                            <constraint firstItem="glV-iA-QpW" firstAttribute="trailing" secondItem="POd-Kb-adt" secondAttribute="trailing" id="rCU-PH-S3a"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="POd-Kb-adt"/>
                     </view>
