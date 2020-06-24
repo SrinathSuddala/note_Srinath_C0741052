@@ -52,7 +52,7 @@ class NoteDetailsViewController: UIViewController {
     
     func saveDataInDataBase() {
         guard let title = titleTextField.text, !title.isEmpty, let descriptionText = descriptionTextView.text else { return }
-        let note = Note(context: appdelegate.persistentContainer.viewContext)
+        let note = selectedNote != nil ? selectedNote! : Note(context: appdelegate.persistentContainer.viewContext)
         note.title = title
         note.desc = descriptionText
         note.date = Date()
