@@ -11,8 +11,7 @@ class NotesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Notes"
-        noteTableView.register(UITableViewCell.self,
-                           forCellReuseIdentifier: "Cell")
+        noteTableView.register(UINib(nibName: "NoteTableViewCell", bundle: nil), forCellReuseIdentifier: "NoteTableViewCell")
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
         // Do any additional setup after loading the view.
     }
@@ -51,10 +50,14 @@ extension NotesListViewController: UITableViewDataSource {
                  cellForRowAt indexPath: IndexPath)
     -> UITableViewCell {
         
-        let cell =
-            tableView.dequeueReusableCell(withIdentifier: "Cell",
-                                          for: indexPath)
-        cell.textLabel?.text = notes[indexPath.row].title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NoteTableViewCell") as! NoteTableViewCell
+        cell.titleLabel.text = notes[indexPath.row].title
+        cell.descLabel.text = notes[indexPath.row].desc
+        if let image = notes[indexPath.row].image,
+            let data = Data(base64Encoded: image, options: .ignoreUnknownCharacters),
+            let finalImage = UIImage(data: data) {
+            cell.noteImage.image = finalImage
+        }
         return cell
     }
 }
