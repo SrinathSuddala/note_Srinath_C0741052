@@ -6,6 +6,9 @@ class NoteDetailsViewController: UIViewController {
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var descriptionTextView:UITextView!
+    @IBOutlet weak var imageButton: UIButton!
+    @IBOutlet weak var recordButton: UIButton!
+    
     let appdelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad() {
@@ -23,6 +26,10 @@ class NoteDetailsViewController: UIViewController {
     @IBAction func addButtonTapped(_ sender: UIButton) {
         saveDataInDataBase()
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func tappedImageButton(_ sender: UIButton) {
+        
     }
     
     func saveDataInDataBase() {

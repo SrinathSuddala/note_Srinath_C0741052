@@ -76,26 +76,49 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Vxm-Oi-Zi0">
-                                <rect key="frame" x="20" y="100" width="374" height="300"/>
+                                <rect key="frame" x="20" y="100" width="374" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="W3c-Ci-t8r"/>
+                                    <constraint firstAttribute="height" constant="150" id="W3c-Ci-t8r"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44f-LI-KXA">
-                                <rect key="frame" x="174.5" y="420" width="65" height="30"/>
+                                <rect key="frame" x="174.5" y="477" width="65" height="30"/>
                                 <state key="normal" title="Add Note"/>
                                 <connections>
                                     <action selector="addButtonTapped:" destination="M3q-cq-qgQ" eventType="touchUpInside" id="cSr-s6-Mtj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNz-j7-qfi">
+                                <rect key="frame" x="20" y="280" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="9QP-yC-gRC"/>
+                                    <constraint firstAttribute="height" constant="150" id="Ugz-Eh-lNS"/>
+                                </constraints>
+                                <state key="normal" title="Select Image"/>
+                                <connections>
+                                    <action selector="tappedImageButton:" destination="M3q-cq-qgQ" eventType="touchUpInside" id="Ir0-b2-MrF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKH-Ts-NCx">
+                                <rect key="frame" x="244" y="280" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="C9B-F1-s99"/>
+                                    <constraint firstAttribute="height" constant="150" id="sf7-ly-7eI"/>
+                                </constraints>
+                                <state key="normal" title="Record Audio"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="44f-LI-KXA" firstAttribute="top" secondItem="Vxm-Oi-Zi0" secondAttribute="bottom" constant="20" id="Xpx-jV-5E9"/>
+                            <constraint firstItem="K1A-YU-kWA" firstAttribute="trailing" secondItem="ZKH-Ts-NCx" secondAttribute="trailing" constant="20" id="2l0-C6-T6y"/>
+                            <constraint firstItem="44f-LI-KXA" firstAttribute="top" secondItem="fNz-j7-qfi" secondAttribute="bottom" constant="47" id="3QE-me-Tpy"/>
+                            <constraint firstItem="ZKH-Ts-NCx" firstAttribute="top" secondItem="Vxm-Oi-Zi0" secondAttribute="bottom" constant="30" id="5RK-WE-rOR"/>
+                            <constraint firstItem="fNz-j7-qfi" firstAttribute="top" secondItem="Vxm-Oi-Zi0" secondAttribute="bottom" constant="30" id="HYr-On-rRa"/>
+                            <constraint firstItem="fNz-j7-qfi" firstAttribute="leading" secondItem="K1A-YU-kWA" secondAttribute="leading" constant="20" id="YFG-b5-8qF"/>
                             <constraint firstItem="44f-LI-KXA" firstAttribute="centerX" secondItem="QbV-Nx-Ych" secondAttribute="centerX" id="Z3N-VZ-zwE"/>
                             <constraint firstItem="Vxm-Oi-Zi0" firstAttribute="leading" secondItem="K1A-YU-kWA" secondAttribute="leading" constant="20" id="bDK-Fe-nd7"/>
                             <constraint firstItem="K1A-YU-kWA" firstAttribute="trailing" secondItem="Fmj-2A-8Yh" secondAttribute="trailing" constant="20" id="hYG-wy-ynP"/>
@@ -109,6 +132,8 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="descriptionTextView" destination="Vxm-Oi-Zi0" id="9bb-zk-aUE"/>
+                        <outlet property="imageButton" destination="fNz-j7-qfi" id="fPS-wQ-Yjw"/>
+                        <outlet property="recordButton" destination="ZKH-Ts-NCx" id="caT-02-qpK"/>
                         <outlet property="titleTextField" destination="Fmj-2A-8Yh" id="jUU-R0-VGq"/>
                     </connections>
                 </viewController>
