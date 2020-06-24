@@ -1,6 +1,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 class NoteDetailsViewController: UIViewController {
     
@@ -11,6 +12,13 @@ class NoteDetailsViewController: UIViewController {
     var selectedImage: UIImage?
     var imagePicker: ImagePicker!
     var selectedNote: Note?
+    var currentLocation: CLLocationCoordinate2D?
+    
+    fileprivate let locationManager: CLLocationManager = {
+       let manager = CLLocationManager()
+       manager.requestWhenInUseAuthorization()
+       return manager
+    }()
     
     let appdelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -24,11 +32,21 @@ class NoteDetailsViewController: UIViewController {
         self.view.addGestureRecognizer(dismissTap)
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
         showSelectedNote()
+        currentLocationSetUp()
         // Do any additional setup after loading the view.
     }
     
     @objc func dismissKeyboardTapOfMainView() {
         self.view.endEditing(true)
+    }
+    
+    func currentLocationSetUp() {
+       locationManager.delegate = self
+       locationManager.desiredAccuracy = kCLLocationAccuracyBest
+       if #available(iOS 11.0, *) {
+          locationManager.showsBackgroundLocationIndicator = true
+       }
+       locationManager.startUpdatingLocation()
     }
     
     func showSelectedNote() {
@@ -77,6 +95,19 @@ extension NoteDetailsViewController: ImagePickerDelegate {
     }
 }
 
+//MARK: - CLLocationManagerDelegate Methods
+extension NoteDetailsViewController: CLLocationManagerDelegate {
+     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations.last! as CLLocation
+        let currentLocation = location.coordinate
+        self.currentLocation = currentLocation
+        locationManager.stopUpdatingLocation()
+     }
+     
+     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
+     }
+}
 
 extension UIImage {
     enum JPEGQuality: CGFloat {

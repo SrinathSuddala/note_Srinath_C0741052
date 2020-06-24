@@ -14,6 +14,10 @@
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Notes requires your location to show notes details</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Notes requires your location to show notes details</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
