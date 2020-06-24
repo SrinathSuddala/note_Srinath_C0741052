@@ -17,6 +17,9 @@ class NoteDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Details"
+        descriptionTextView.layer.borderColor = UIColor.black.cgColor
+        descriptionTextView.layer.borderWidth = 1.0
+        descriptionTextView.layer.cornerRadius = 5.0
         let dismissTap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboardTapOfMainView))
         self.view.addGestureRecognizer(dismissTap)
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
