@@ -17,6 +17,7 @@
 		AC68C2F224A0E2C90051DDC0 /* NoteDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC68C2F124A0E2C90051DDC0 /* NoteDetailsViewController.swift */; };
 		AC68C2F924A0F4E30051DDC0 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC68C2F724A0F4E30051DDC0 /* Note+CoreDataClass.swift */; };
 		AC68C2FA24A0F4E30051DDC0 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC68C2F824A0F4E30051DDC0 /* Note+CoreDataProperties.swift */; };
+		AC922A9424A3940100237AD0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC922A9324A3940100237AD0 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		AC68C2F124A0E2C90051DDC0 /* NoteDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailsViewController.swift; sourceTree = "<group>"; };
 		AC68C2F724A0F4E30051DDC0 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AC68C2F824A0F4E30051DDC0 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AC922A9324A3940100237AD0 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				AC19D705249BC99D00DB0C3F /* AppDelegate.swift */,
 				AC19D707249BC99D00DB0C3F /* SceneDelegate.swift */,
 				AC19D709249BC99D00DB0C3F /* NotesListViewController.swift */,
+				AC922A9324A3940100237AD0 /* ImagePicker.swift */,
 				AC68C2F124A0E2C90051DDC0 /* NoteDetailsViewController.swift */,
 				AC19D70B249BC99D00DB0C3F /* Main.storyboard */,
 				AC19D711249BC9A000DB0C3F /* Assets.xcassets */,
@@ -155,6 +158,7 @@
 				AC19D710249BC99D00DB0C3F /* note_Srinath_C0741052.xcdatamodeld in Sources */,
 				AC19D706249BC99D00DB0C3F /* AppDelegate.swift in Sources */,
 				AC68C2F924A0F4E30051DDC0 /* Note+CoreDataClass.swift in Sources */,
+				AC922A9424A3940100237AD0 /* ImagePicker.swift in Sources */,
 				AC68C2F224A0E2C90051DDC0 /* NoteDetailsViewController.swift in Sources */,
 				AC19D708249BC99D00DB0C3F /* SceneDelegate.swift in Sources */,
 			);
