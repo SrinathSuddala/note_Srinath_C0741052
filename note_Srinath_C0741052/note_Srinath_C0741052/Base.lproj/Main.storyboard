@@ -154,5 +154,32 @@
             </objects>
             <point key="canvasLocation" x="779" y="-217"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="K22-ki-XfE">
+            <objects>
+                <viewController id="Ifh-y8-uDe" customClass="MapViewController" customModule="note_Srinath_C0741052" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xm5-A5-Pmk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4rz-MJ-7OC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="U7o-AY-a0i" firstAttribute="bottom" secondItem="4rz-MJ-7OC" secondAttribute="bottom" id="LAZ-s4-q8g"/>
+                            <constraint firstItem="U7o-AY-a0i" firstAttribute="trailing" secondItem="4rz-MJ-7OC" secondAttribute="trailing" id="c8u-Wg-DdB"/>
+                            <constraint firstItem="4rz-MJ-7OC" firstAttribute="leading" secondItem="U7o-AY-a0i" secondAttribute="leading" id="crP-mK-gpS"/>
+                            <constraint firstItem="4rz-MJ-7OC" firstAttribute="top" secondItem="U7o-AY-a0i" secondAttribute="top" id="z9b-Ck-Zw8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="U7o-AY-a0i"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PVG-qX-Hn5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1479" y="-213"/>
+        </scene>
     </scenes>
 </document>

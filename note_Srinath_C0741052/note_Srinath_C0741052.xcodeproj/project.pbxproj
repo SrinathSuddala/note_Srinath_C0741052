@@ -20,6 +20,7 @@
 		AC922A9424A3940100237AD0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC922A9324A3940100237AD0 /* ImagePicker.swift */; };
 		AC922A9924A3A50300237AD0 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC922A9724A3A50300237AD0 /* NoteTableViewCell.swift */; };
 		AC922A9A24A3A50300237AD0 /* NoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC922A9824A3A50300237AD0 /* NoteTableViewCell.xib */; };
+		AC922A9C24A3BC2800237AD0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC922A9B24A3BC2800237AD0 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		AC922A9324A3940100237AD0 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		AC922A9724A3A50300237AD0 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		AC922A9824A3A50300237AD0 /* NoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTableViewCell.xib; sourceTree = "<group>"; };
+		AC922A9B24A3BC2800237AD0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				AC19D705249BC99D00DB0C3F /* AppDelegate.swift */,
 				AC19D707249BC99D00DB0C3F /* SceneDelegate.swift */,
 				AC19D709249BC99D00DB0C3F /* NotesListViewController.swift */,
+				AC922A9B24A3BC2800237AD0 /* MapViewController.swift */,
 				AC922A9324A3940100237AD0 /* ImagePicker.swift */,
 				AC68C2F124A0E2C90051DDC0 /* NoteDetailsViewController.swift */,
 				AC922A9724A3A50300237AD0 /* NoteTableViewCell.swift */,
@@ -163,6 +166,7 @@
 				AC19D70A249BC99D00DB0C3F /* NotesListViewController.swift in Sources */,
 				AC68C2FA24A0F4E30051DDC0 /* Note+CoreDataProperties.swift in Sources */,
 				AC19D710249BC99D00DB0C3F /* note_Srinath_C0741052.xcdatamodeld in Sources */,
+				AC922A9C24A3BC2800237AD0 /* MapViewController.swift in Sources */,
 				AC19D706249BC99D00DB0C3F /* AppDelegate.swift in Sources */,
 				AC68C2F924A0F4E30051DDC0 /* Note+CoreDataClass.swift in Sources */,
 				AC922A9924A3A50300237AD0 /* NoteTableViewCell.swift in Sources */,
