@@ -31,7 +31,10 @@ class NotesListViewController: UIViewController {
     }
     
     @objc func mapTapped() {
-        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
+        viewController.notes = notes
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     @objc func addTapped() {

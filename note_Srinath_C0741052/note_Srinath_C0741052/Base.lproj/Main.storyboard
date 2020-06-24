@@ -157,13 +157,16 @@
         <!--Map View Controller-->
         <scene sceneID="K22-ki-XfE">
             <objects>
-                <viewController id="Ifh-y8-uDe" customClass="MapViewController" customModule="note_Srinath_C0741052" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" id="Ifh-y8-uDe" customClass="MapViewController" customModule="note_Srinath_C0741052" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xm5-A5-Pmk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="4rz-MJ-7OC">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Ifh-y8-uDe" id="fba-yl-BFw"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -176,6 +179,9 @@
                         <viewLayoutGuide key="safeArea" id="U7o-AY-a0i"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="mapView" destination="4rz-MJ-7OC" id="gYb-zI-P0V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PVG-qX-Hn5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
