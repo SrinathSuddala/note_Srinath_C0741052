@@ -13,6 +13,7 @@ class NotesListViewController: UIViewController {
         title = "Notes"
         noteTableView.register(UINib(nibName: "NoteTableViewCell", bundle: nil), forCellReuseIdentifier: "NoteTableViewCell")
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Map", style: .plain, target: self, action: #selector(mapTapped))
         // Do any additional setup after loading the view.
     }
     
@@ -27,6 +28,10 @@ class NotesListViewController: UIViewController {
             return []
         }
         return notes
+    }
+    
+    @objc func mapTapped() {
+        
     }
     
     @objc func addTapped() {
