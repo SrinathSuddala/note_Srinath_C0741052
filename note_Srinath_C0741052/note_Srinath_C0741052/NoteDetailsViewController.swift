@@ -28,6 +28,12 @@ class NoteDetailsViewController: UIViewController {
         descriptionTextView.layer.borderColor = UIColor.black.cgColor
         descriptionTextView.layer.borderWidth = 1.0
         descriptionTextView.layer.cornerRadius = 5.0
+        imageButton.layer.borderColor = UIColor.black.cgColor
+        imageButton.layer.borderWidth = 1.0
+        
+        recordButton.layer.borderColor = UIColor.black.cgColor
+        recordButton.layer.borderWidth = 1.0
+        
         let dismissTap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboardTapOfMainView))
         self.view.addGestureRecognizer(dismissTap)
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
