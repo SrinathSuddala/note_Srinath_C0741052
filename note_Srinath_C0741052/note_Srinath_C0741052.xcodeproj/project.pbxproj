@@ -10,6 +10,7 @@
 		AC01995124A503B6003B0619 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC01995024A503B6003B0619 /* CategoriesViewController.swift */; };
 		AC01995424A5056C003B0619 /* Category+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC01995224A5056C003B0619 /* Category+CoreDataClass.swift */; };
 		AC01995524A5056C003B0619 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC01995324A5056C003B0619 /* Category+CoreDataProperties.swift */; };
+		AC01995724A50626003B0619 /* CategoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC01995624A50626003B0619 /* CategoryDetailViewController.swift */; };
 		AC19D706249BC99D00DB0C3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC19D705249BC99D00DB0C3F /* AppDelegate.swift */; };
 		AC19D708249BC99D00DB0C3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC19D707249BC99D00DB0C3F /* SceneDelegate.swift */; };
 		AC19D70A249BC99D00DB0C3F /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC19D709249BC99D00DB0C3F /* NotesListViewController.swift */; };
@@ -30,6 +31,7 @@
 		AC01995024A503B6003B0619 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		AC01995224A5056C003B0619 /* Category+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AC01995324A5056C003B0619 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AC01995624A50626003B0619 /* CategoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailViewController.swift; sourceTree = "<group>"; };
 		AC19D702249BC99D00DB0C3F /* note_Srinath_C0741052.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = note_Srinath_C0741052.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC19D705249BC99D00DB0C3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC19D707249BC99D00DB0C3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				AC922A9B24A3BC2800237AD0 /* MapViewController.swift */,
 				AC922A9324A3940100237AD0 /* ImagePicker.swift */,
 				AC01995024A503B6003B0619 /* CategoriesViewController.swift */,
+				AC01995624A50626003B0619 /* CategoryDetailViewController.swift */,
 				AC68C2F124A0E2C90051DDC0 /* NoteDetailsViewController.swift */,
 				AC922A9724A3A50300237AD0 /* NoteTableViewCell.swift */,
 				AC922A9824A3A50300237AD0 /* NoteTableViewCell.xib */,
@@ -185,6 +188,7 @@
 				AC922A9424A3940100237AD0 /* ImagePicker.swift in Sources */,
 				AC68C2F224A0E2C90051DDC0 /* NoteDetailsViewController.swift in Sources */,
 				AC19D708249BC99D00DB0C3F /* SceneDelegate.swift in Sources */,
+				AC01995724A50626003B0619 /* CategoryDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
