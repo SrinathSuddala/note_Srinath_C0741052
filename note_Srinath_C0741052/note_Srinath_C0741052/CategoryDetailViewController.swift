@@ -13,7 +13,13 @@ class CategoryDetailViewController: UIViewController {
     }
     
     @objc func saveTapped() {
-        
+        guard let title = titleTextField.text, !title.isEmpty else { return }
+        let category = Category(context: appdelegate.persistentContainer.viewContext)
+        category.title = title
+        category.uuid = UUID()
+        appdelegate.persistentContainer.viewContext.insert(category)
+        try? appdelegate.persistentContainer.viewContext.save()
+        self.navigationController?.popViewController(animated: true)
     }
     
 
