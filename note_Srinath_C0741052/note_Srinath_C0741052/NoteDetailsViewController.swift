@@ -9,6 +9,7 @@ class NoteDetailsViewController: UIViewController {
     @IBOutlet weak var descriptionTextView:UITextView!
     @IBOutlet weak var imageButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var selectCategoryButton: UIButton!
     var selectedImage: UIImage?
     var imagePicker: ImagePicker!
     var selectedNote: Note?
@@ -33,6 +34,8 @@ class NoteDetailsViewController: UIViewController {
         
         recordButton.layer.borderColor = UIColor.black.cgColor
         recordButton.layer.borderWidth = 1.0
+        selectCategoryButton.layer.borderColor = UIColor.black.cgColor
+        selectCategoryButton.layer.borderWidth = 1.0
         
         let dismissTap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboardTapOfMainView))
         self.view.addGestureRecognizer(dismissTap)
@@ -66,6 +69,12 @@ class NoteDetailsViewController: UIViewController {
             imageButton.setBackgroundImage(finalImage, for: UIControl.State())
         }
         
+    }
+    
+    @IBAction func selectCategoryTapped() {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "CategoriesViewController") as! CategoriesViewController
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
     
     @IBAction func addButtonTapped(_ sender: UIButton) {

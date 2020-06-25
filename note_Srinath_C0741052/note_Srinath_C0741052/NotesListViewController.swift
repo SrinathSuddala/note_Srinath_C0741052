@@ -7,6 +7,7 @@ class NotesListViewController: UIViewController {
     @IBOutlet weak var noteTableView: UITableView!
     var notes: [Note] = []
     let appdelegate = UIApplication.shared.delegate as! AppDelegate
+    var selectedCategory: Category!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,7 @@ class NotesListViewController: UIViewController {
     }
     
     func fetchNotes() -> [Note] {
-        guard let notes = try? appdelegate.persistentContainer.viewContext.fetch(Note.fetchRequest() as NSFetchRequest<Note>) else {
+        guard let notes = try? appdelegate.persistentContainer.viewContext.fetch(Note.fetchRequest(with: selectedCategory.uuid!) as NSFetchRequest<Note>) else {
             return []
         }
         return notes
@@ -87,12 +88,12 @@ extension NotesListViewController: UISearchBarDelegate {
     
     func fetchNotes(with text: String) -> [Note] {
         if text.isEmpty {
-            guard let notes = try? appdelegate.persistentContainer.viewContext.fetch(Note.fetchRequest() as NSFetchRequest<Note>) else {
+            guard let notes = try? appdelegate.persistentContainer.viewContext.fetch(Note.fetchRequest(with: selectedCategory.uuid!) as NSFetchRequest<Note>) else {
                 return []
             }
             return notes
         } else {
-            guard let notes = try? appdelegate.persistentContainer.viewContext.fetch(Note.fetchRequest(with: text) as NSFetchRequest<Note>) else {
+            guard let notes = try? appdelegate.persistentContainer.viewContext.fetch(Note.fetchRequest(with: text, categoryUuid: selectedCategory.uuid!) as NSFetchRequest<Note>) else {
                 return []
             }
             return notes
