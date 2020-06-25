@@ -10,7 +10,7 @@
         <!--Category Detail View Controller-->
         <scene sceneID="NyQ-y2-w7a">
             <objects>
-                <viewController id="cMd-RV-KEd" customClass="CategoryDetailViewController" customModule="note_Srinath_C0741052" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoryDetailViewController" id="cMd-RV-KEd" customClass="CategoryDetailViewController" customModule="note_Srinath_C0741052" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R3Z-GZ-ZEe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -117,6 +117,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QPq-Rp-k21">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="5Bj-3u-Kfk" id="51C-YU-4m8"/>
+                                    <outlet property="delegate" destination="5Bj-3u-Kfk" id="yt4-BR-hSX"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -129,6 +133,9 @@
                         <viewLayoutGuide key="safeArea" id="qSw-IK-evA"/>
                     </view>
                     <navigationItem key="navigationItem" id="Tib-go-dS3"/>
+                    <connections>
+                        <outlet property="categoryTable" destination="QPq-Rp-k21" id="I61-uA-hRN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aou-cb-3kg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
