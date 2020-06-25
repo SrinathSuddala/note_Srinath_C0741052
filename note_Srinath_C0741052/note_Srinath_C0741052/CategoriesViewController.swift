@@ -6,12 +6,20 @@ class CategoriesViewController: UIViewController {
     @IBOutlet weak var categoryTable: UITableView!
     var categories: [Category] = []
     let appdelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    var isFromNotesDetails: Bool = false
+    var selectedCategoryUuid: UUID?
+    var onCategorySelected: ((Category)->())?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Category"
-        categoryTable.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        title = isFromNotesDetails ? "Select Category" : "Category"
+        categoryTable.register(UITableViewCell.self,
+                           forCellReuseIdentifier: "Cell")
+        if !isFromNotesDetails {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
+        }
+        
         // Do any additional setup after loading the view.
     }
     
@@ -51,18 +59,27 @@ extension CategoriesViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
         let category = categories[indexPath.row]
         cell.textLabel?.text = category.title
+        if category.uuid == selectedCategoryUuid {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
         return cell
     }
 }
 
 extension CategoriesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "NotesListViewController") as! NotesListViewController
-        viewController.selectedCategory = categories[indexPath.row]
-        self.navigationController?.pushViewController(viewController, animated: true)
-        
+        if isFromNotesDetails {
+            selectedCategoryUuid = categories[indexPath.row].uuid
+            tableView.reloadData()
+            onCategorySelected?(categories[indexPath.row])
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "NotesListViewController") as! NotesListViewController
+            viewController.selectedCategory = categories[indexPath.row]
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
     }
 }
 
