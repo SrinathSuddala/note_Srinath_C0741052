@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC01995124A503B6003B0619 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC01995024A503B6003B0619 /* CategoriesViewController.swift */; };
 		AC19D706249BC99D00DB0C3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC19D705249BC99D00DB0C3F /* AppDelegate.swift */; };
 		AC19D708249BC99D00DB0C3F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC19D707249BC99D00DB0C3F /* SceneDelegate.swift */; };
 		AC19D70A249BC99D00DB0C3F /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC19D709249BC99D00DB0C3F /* NotesListViewController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC01995024A503B6003B0619 /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		AC19D702249BC99D00DB0C3F /* note_Srinath_C0741052.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = note_Srinath_C0741052.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC19D705249BC99D00DB0C3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AC19D707249BC99D00DB0C3F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				AC19D709249BC99D00DB0C3F /* NotesListViewController.swift */,
 				AC922A9B24A3BC2800237AD0 /* MapViewController.swift */,
 				AC922A9324A3940100237AD0 /* ImagePicker.swift */,
+				AC01995024A503B6003B0619 /* CategoriesViewController.swift */,
 				AC68C2F124A0E2C90051DDC0 /* NoteDetailsViewController.swift */,
 				AC922A9724A3A50300237AD0 /* NoteTableViewCell.swift */,
 				AC922A9824A3A50300237AD0 /* NoteTableViewCell.xib */,
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC19D70A249BC99D00DB0C3F /* NotesListViewController.swift in Sources */,
+				AC01995124A503B6003B0619 /* CategoriesViewController.swift in Sources */,
 				AC68C2FA24A0F4E30051DDC0 /* Note+CoreDataProperties.swift in Sources */,
 				AC19D710249BC99D00DB0C3F /* note_Srinath_C0741052.xcdatamodeld in Sources */,
 				AC922A9C24A3BC2800237AD0 /* MapViewController.swift in Sources */,
