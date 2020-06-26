@@ -78,7 +78,7 @@ class NoteDetailsViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let viewController = storyboard.instantiateViewController(withIdentifier: "CategoriesViewController") as! CategoriesViewController
         viewController.isFromNotesDetails = true
-        viewController.selectedCategoryUuid = selectedCategory?.uuid
+        viewController.selectedCategoryUuid = selectedNote?.category.uuid
         viewController.onCategorySelected = { category in
             self.selectedCategory = category
             self.selectCategoryButton.setTitle(category.title, for: UIControl.State())
