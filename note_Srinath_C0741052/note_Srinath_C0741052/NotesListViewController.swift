@@ -13,8 +13,8 @@ class NotesListViewController: UIViewController {
         super.viewDidLoad()
         title = "Notes"
         noteTableView.register(UINib(nibName: "NoteTableViewCell", bundle: nil), forCellReuseIdentifier: "NoteTableViewCell")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Map", style: .plain, target: self, action: #selector(mapTapped))
+        navigationItem.rightBarButtonItems = [UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addTapped)), UIBarButtonItem(title: "Map", style: .plain, target: self, action: #selector(mapTapped))]
+        navigationItem.leftBarButtonItems = [UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backTapped))]
         // Do any additional setup after loading the view.
     }
     
@@ -36,6 +36,10 @@ class NotesListViewController: UIViewController {
         let viewController = storyboard.instantiateViewController(withIdentifier: "MapViewController") as! MapViewController
         viewController.notes = notes
         self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @objc func backTapped() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @objc func addTapped() {

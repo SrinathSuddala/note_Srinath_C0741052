@@ -14,6 +14,7 @@ class NoteDetailsViewController: UIViewController {
     var imagePicker: ImagePicker!
     var selectedNote: Note?
     var currentLocation: CLLocationCoordinate2D?
+    var selectedCategory: Category?
     
     fileprivate let locationManager: CLLocationManager = {
        let manager = CLLocationManager()
@@ -62,6 +63,8 @@ class NoteDetailsViewController: UIViewController {
         guard let note = selectedNote else { return }
         titleTextField.text = note.title
         descriptionTextView.text = note.desc
+        selectCategoryButton.setTitle(note.category.title, for: UIControl.State())
+        
         if let image = note.image,
             let data = Data(base64Encoded: image, options: .ignoreUnknownCharacters),
             let finalImage = UIImage(data: data) {
@@ -74,6 +77,12 @@ class NoteDetailsViewController: UIViewController {
     @IBAction func selectCategoryTapped() {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let viewController = storyboard.instantiateViewController(withIdentifier: "CategoriesViewController") as! CategoriesViewController
+        viewController.isFromNotesDetails = true
+        viewController.selectedCategoryUuid = selectedCategory?.uuid
+        viewController.onCategorySelected = { category in
+            self.selectedCategory = category
+            self.selectCategoryButton.setTitle(category.title, for: UIControl.State())
+        }
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -92,6 +101,9 @@ class NoteDetailsViewController: UIViewController {
         note.title = title
         note.desc = descriptionText
         note.date = Date()
+        if let category = selectedCategory {
+            note.category = category
+        }
         if let image = selectedImage,let imageData = image.jpeg(.low) {
             note.image = imageData.base64EncodedString(options: .lineLength64Characters)
         }
@@ -99,7 +111,9 @@ class NoteDetailsViewController: UIViewController {
             note.lat = location.latitude
             note.long = location.longitude
         }
-        appdelegate.persistentContainer.viewContext.insert(note)
+        if selectedNote == nil {
+            appdelegate.persistentContainer.viewContext.insert(note)
+        }
         try? appdelegate.persistentContainer.viewContext.save()
     }
     
