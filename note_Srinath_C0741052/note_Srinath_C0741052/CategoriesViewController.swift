@@ -13,7 +13,7 @@ class CategoriesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = isFromNotesDetails ? "Select Category" : "Category"
+        title = isFromNotesDetails ? "Select Category" : "Categories"
         categoryTable.register(UITableViewCell.self,
                            forCellReuseIdentifier: "Cell")
         if !isFromNotesDetails {
