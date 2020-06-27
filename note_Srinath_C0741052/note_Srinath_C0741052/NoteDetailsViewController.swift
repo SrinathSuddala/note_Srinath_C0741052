@@ -2,6 +2,7 @@
 import Foundation
 import UIKit
 import MapKit
+import AVFoundation
 
 class NoteDetailsViewController: UIViewController {
     
@@ -15,6 +16,18 @@ class NoteDetailsViewController: UIViewController {
     var selectedNote: Note?
     var currentLocation: CLLocationCoordinate2D?
     var selectedCategory: Category?
+    
+    
+    
+    @IBOutlet var recordingTimeLabel: UILabel!
+    @IBOutlet var play_btn_ref: UIButton!
+
+    var audioRecorder: AVAudioRecorder!
+    var audioPlayer : AVAudioPlayer!
+    var meterTimer:Timer!
+    var isAudioRecordingGranted: Bool!
+    var isRecording = false
+    var isPlaying = false
     
     fileprivate let locationManager: CLLocationManager = {
        let manager = CLLocationManager()
@@ -43,7 +56,30 @@ class NoteDetailsViewController: UIViewController {
         self.imagePicker = ImagePicker(presentationController: self, delegate: self)
         showSelectedNote()
         currentLocationSetUp()
+        checkRecordPermission()
         // Do any additional setup after loading the view.
+    }
+    
+    func checkRecordPermission(){
+        switch AVAudioSession.sharedInstance().recordPermission {
+        case AVAudioSessionRecordPermission.granted:
+            isAudioRecordingGranted = true
+            break
+        case AVAudioSessionRecordPermission.denied:
+            isAudioRecordingGranted = false
+            break
+        case AVAudioSessionRecordPermission.undetermined:
+            AVAudioSession.sharedInstance().requestRecordPermission({ (allowed) in
+                    if allowed {
+                        self.isAudioRecordingGranted = true
+                    } else {
+                        self.isAudioRecordingGranted = false
+                    }
+            })
+            break
+        default:
+            break
+        }
     }
     
     @objc func dismissKeyboardTapOfMainView() {

@@ -20,6 +20,8 @@
 	<string>Notes requires your location to show notes details</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Notes required your microphone to record audio in note</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>NSCameraUsageDescription</key>
