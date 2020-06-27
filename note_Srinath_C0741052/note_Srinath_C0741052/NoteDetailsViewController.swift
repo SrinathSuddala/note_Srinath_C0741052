@@ -188,7 +188,6 @@ class NoteDetailsViewController: UIViewController, AVAudioRecorderDelegate, AVAu
         if(isRecording) {
             finishAudioRecording(success: true)
             recordButton.setTitle("Record", for: .normal)
-//            play_btn_ref.isEnabled = true
             isRecording = false
         } else {
             setup_recorder()
@@ -196,7 +195,6 @@ class NoteDetailsViewController: UIViewController, AVAudioRecorderDelegate, AVAu
             audioRecorder.record()
             meterTimer = Timer.scheduledTimer(timeInterval: 0.1, target:self, selector:#selector(self.updateAudioMeter(timer:)), userInfo:nil, repeats:true)
             recordButton.setTitle("Stop", for: .normal)
-//            play_btn_ref.isEnabled = false
             isRecording = true
         }
     }
@@ -247,13 +245,10 @@ class NoteDetailsViewController: UIViewController, AVAudioRecorderDelegate, AVAu
         try? appdelegate.persistentContainer.viewContext.save()
     }
     
-    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool)
-    {
-        if !flag
-        {
+    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+        if !flag {
             finishAudioRecording(success: false)
         }
-//        play_btn_ref.isEnabled = true
     }
     
 }
