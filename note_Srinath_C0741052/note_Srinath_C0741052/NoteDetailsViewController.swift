@@ -20,6 +20,7 @@ class NoteDetailsViewController: UIViewController, AVAudioRecorderDelegate, AVAu
     
     
     @IBOutlet var recordingTimeLabel: UILabel!
+    @IBOutlet var play_btn_ref: UIButton!
     
     var recordUrl: String?
     var audioRecorder: AVAudioRecorder!
@@ -90,10 +91,23 @@ class NoteDetailsViewController: UIViewController, AVAudioRecorderDelegate, AVAu
     }
 
     func getFileUrl() -> URL{
-        let filename = "\(UUID()).m4a"
-        let filePath = getDocumentsDirectory().appendingPathComponent(filename)
-        recordUrl = "\(filePath)"
-        return filePath
+        var ulr: URL!
+        if let noteUrl = selectedNote?.audio {
+            recordUrl = noteUrl
+            let filePath = getDocumentsDirectory().appendingPathComponent(noteUrl)
+            ulr = filePath
+        } else {
+            if let urlString = recordUrl {
+                let filePath = getDocumentsDirectory().appendingPathComponent(urlString)
+                ulr = filePath
+            } else {
+                let filename = "\(UUID()).m4a"
+                let filePath = getDocumentsDirectory().appendingPathComponent(filename)
+                ulr = filePath
+                recordUrl = filename
+            }
+        }
+        return ulr
     }
     
     func setup_recorder()
@@ -130,7 +144,6 @@ class NoteDetailsViewController: UIViewController, AVAudioRecorderDelegate, AVAu
         ac.addAction(UIAlertAction(title: action_title, style: .default)
         {
             (result : UIAlertAction) -> Void in
-        _ = self.navigationController?.popViewController(animated: true)
         })
         present(ac, animated: true)
     }
@@ -188,6 +201,7 @@ class NoteDetailsViewController: UIViewController, AVAudioRecorderDelegate, AVAu
         if(isRecording) {
             finishAudioRecording(success: true)
             recordButton.setTitle("Record", for: .normal)
+            play_btn_ref.isEnabled = true
             isRecording = false
         } else {
             setup_recorder()
@@ -195,7 +209,47 @@ class NoteDetailsViewController: UIViewController, AVAudioRecorderDelegate, AVAu
             audioRecorder.record()
             meterTimer = Timer.scheduledTimer(timeInterval: 0.1, target:self, selector:#selector(self.updateAudioMeter(timer:)), userInfo:nil, repeats:true)
             recordButton.setTitle("Stop", for: .normal)
+            play_btn_ref.isEnabled = false
             isRecording = true
+        }
+    }
+    
+    func prepare_play()
+    {
+        do
+        {
+            audioPlayer = try AVAudioPlayer(contentsOf: getFileUrl())
+            audioPlayer.delegate = self
+            audioPlayer.prepareToPlay()
+        }
+        catch{
+            print("Error")
+        }
+    }
+
+    @IBAction func play_recording(_ sender: Any)
+    {
+        if(isPlaying)
+        {
+            audioPlayer.stop()
+            recordButton.isEnabled = true
+            play_btn_ref.setTitle("Play", for: .normal)
+            isPlaying = false
+        }
+        else
+        {
+            if FileManager.default.fileExists(atPath: getFileUrl().path)
+            {
+                recordButton.isEnabled = false
+                play_btn_ref.setTitle("pause", for: .normal)
+                prepare_play()
+                audioPlayer.play()
+                isPlaying = true
+            }
+            else
+            {
+                display_alert(msg_title: "Error", msg_desc: "Audio file is missing.", action_title: "OK")
+            }
         }
     }
     
@@ -249,6 +303,12 @@ class NoteDetailsViewController: UIViewController, AVAudioRecorderDelegate, AVAu
         if !flag {
             finishAudioRecording(success: false)
         }
+        play_btn_ref.isEnabled = true
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool)
+    {
+        recordButton.isEnabled = true
     }
     
 }

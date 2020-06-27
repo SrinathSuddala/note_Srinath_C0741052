@@ -212,12 +212,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oje-6A-hzR">
+                                <rect key="frame" x="304" y="520" width="30" height="30"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="play_recording:" destination="M3q-cq-qgQ" eventType="touchUpInside" id="HK4-5J-ixx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="K1A-YU-kWA" firstAttribute="trailing" secondItem="ZKH-Ts-NCx" secondAttribute="trailing" constant="20" id="2l0-C6-T6y"/>
                             <constraint firstItem="44f-LI-KXA" firstAttribute="top" secondItem="fNz-j7-qfi" secondAttribute="bottom" constant="60" id="3QE-me-Tpy"/>
                             <constraint firstItem="ZKH-Ts-NCx" firstAttribute="top" secondItem="Vxm-Oi-Zi0" secondAttribute="bottom" constant="30" id="5RK-WE-rOR"/>
+                            <constraint firstItem="oje-6A-hzR" firstAttribute="top" secondItem="ZKH-Ts-NCx" secondAttribute="bottom" constant="45" id="CeW-5a-XWF"/>
                             <constraint firstItem="fNz-j7-qfi" firstAttribute="top" secondItem="Vxm-Oi-Zi0" secondAttribute="bottom" constant="30" id="HYr-On-rRa"/>
                             <constraint firstItem="4Dl-bi-j1F" firstAttribute="leading" secondItem="K1A-YU-kWA" secondAttribute="leading" constant="20" id="U30-FS-9Wh"/>
                             <constraint firstItem="fNz-j7-qfi" firstAttribute="leading" secondItem="K1A-YU-kWA" secondAttribute="leading" constant="20" id="YFG-b5-8qF"/>
@@ -227,6 +235,7 @@
                             <constraint firstItem="K1A-YU-kWA" firstAttribute="trailing" secondItem="Fmj-2A-8Yh" secondAttribute="trailing" constant="20" id="hYG-wy-ynP"/>
                             <constraint firstItem="Fmj-2A-8Yh" firstAttribute="top" secondItem="K1A-YU-kWA" secondAttribute="top" constant="80" id="igg-vc-UIX"/>
                             <constraint firstItem="K1A-YU-kWA" firstAttribute="trailing" secondItem="Vxm-Oi-Zi0" secondAttribute="trailing" constant="20" id="rRh-7R-6Jh"/>
+                            <constraint firstItem="oje-6A-hzR" firstAttribute="centerX" secondItem="eBq-Lb-p2v" secondAttribute="centerX" id="tiz-3f-QOF"/>
                             <constraint firstItem="Vxm-Oi-Zi0" firstAttribute="top" secondItem="Fmj-2A-8Yh" secondAttribute="bottom" constant="20" id="ujX-V0-r6i"/>
                             <constraint firstItem="Fmj-2A-8Yh" firstAttribute="leading" secondItem="K1A-YU-kWA" secondAttribute="leading" constant="20" id="uyV-HB-mgf"/>
                             <constraint firstItem="Fmj-2A-8Yh" firstAttribute="top" secondItem="4Dl-bi-j1F" secondAttribute="bottom" constant="20" id="yal-md-mF6"/>
@@ -239,6 +248,7 @@
                     <connections>
                         <outlet property="descriptionTextView" destination="Vxm-Oi-Zi0" id="9bb-zk-aUE"/>
                         <outlet property="imageButton" destination="fNz-j7-qfi" id="fPS-wQ-Yjw"/>
+                        <outlet property="play_btn_ref" destination="oje-6A-hzR" id="qYb-LN-4pX"/>
                         <outlet property="recordButton" destination="ZKH-Ts-NCx" id="caT-02-qpK"/>
                         <outlet property="recordingTimeLabel" destination="eBq-Lb-p2v" id="jHF-rb-3wX"/>
                         <outlet property="selectCategoryButton" destination="4Dl-bi-j1F" id="e52-Pj-PKO"/>
