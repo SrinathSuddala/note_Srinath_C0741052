@@ -20,7 +20,8 @@ class NoteDetailsViewController: UIViewController, AVAudioRecorderDelegate, AVAu
     
     
     @IBOutlet var recordingTimeLabel: UILabel!
-
+    
+    var recordUrl: String?
     var audioRecorder: AVAudioRecorder!
     var audioPlayer : AVAudioPlayer!
     var meterTimer:Timer!
@@ -88,11 +89,11 @@ class NoteDetailsViewController: UIViewController, AVAudioRecorderDelegate, AVAu
         return documentsDirectory
     }
 
-    func getFileUrl() -> URL
-    {
+    func getFileUrl() -> URL{
         let filename = "\(UUID()).m4a"
         let filePath = getDocumentsDirectory().appendingPathComponent(filename)
-    return filePath
+        recordUrl = "\(filePath)"
+        return filePath
     }
     
     func setup_recorder()
@@ -239,6 +240,7 @@ class NoteDetailsViewController: UIViewController, AVAudioRecorderDelegate, AVAu
             note.lat = location.latitude
             note.long = location.longitude
         }
+        note.audio = recordUrl
         if selectedNote == nil {
             appdelegate.persistentContainer.viewContext.insert(note)
         }
