@@ -95,6 +95,10 @@ class NoteDetailsViewController: UIViewController {
         self.imagePicker.present(from: sender)
     }
     
+    @IBAction func audioButtonTapped(_ sender: UIButton) {
+        
+    }
+    
     func saveDataInDataBase() {
         guard let title = titleTextField.text, !title.isEmpty, let descriptionText = descriptionTextView.text else { return }
         let note = selectedNote != nil ? selectedNote! : Note(context: appdelegate.persistentContainer.viewContext)

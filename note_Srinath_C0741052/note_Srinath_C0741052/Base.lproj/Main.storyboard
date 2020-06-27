@@ -39,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HfZ-fF-tFs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1107" y="-805"/>
+            <point key="canvasLocation" x="1971" y="-208"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9ne-6U-LQz">
@@ -104,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7eZ-Di-ZVa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="736" y="-208"/>
+            <point key="canvasLocation" x="652" y="-231"/>
         </scene>
         <!--Categories View Controller-->
         <scene sceneID="kjI-4f-QqL">
@@ -139,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aou-cb-3kg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71" y="-208"/>
+            <point key="canvasLocation" x="42" y="58"/>
         </scene>
         <!--Note Details View Controller-->
         <scene sceneID="znL-rB-Zw1">
@@ -192,6 +192,9 @@
                                     <constraint firstAttribute="height" constant="150" id="sf7-ly-7eI"/>
                                 </constraints>
                                 <state key="normal" title="Record Audio"/>
+                                <connections>
+                                    <action selector="audioButtonTapped:" destination="M3q-cq-qgQ" eventType="touchUpInside" id="Kzd-BS-naA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dl-bi-j1F">
                                 <rect key="frame" x="20" y="20" width="374" height="40"/>
@@ -235,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ywp-we-fFc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1394" y="-208"/>
+            <point key="canvasLocation" x="1296" y="-208"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="K22-ki-XfE">
@@ -268,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PVG-qX-Hn5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2039" y="-208"/>
+            <point key="canvasLocation" x="806" y="429"/>
         </scene>
     </scenes>
 </document>
